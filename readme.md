@@ -1,4 +1,4 @@
-# [Caddy](https://caddyserver.com/) Frontend & Backend Reverse Proxy
+# [Caddy](https://caddyserver.com/) Backend Reverse Proxy
 
 ### [View the example public project here](https://railway.app/project/35d8d571-4313-4049-9699-4e7db7f02a2f) - Utilizes sleeping frontend and backend services with wake via the private network
 
