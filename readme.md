@@ -4,8 +4,6 @@
 
 Access the backend from `/api/*` on the proxy domain
 
-**Backend - Go Mux:** https://mysite.up.railway.app/api/
-
 The proxy configurations are done in the
 [`Caddyfile`](https://github.com/brody192/reverse-proxy/blob/main/Caddyfile)
 everything is commented for your ease of use!
