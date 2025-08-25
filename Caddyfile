@@ -38,12 +38,22 @@
         format json
     }
 
-    handle_path /investments* {
-        reverse_proxy {$BACKEND_DOMAIN} {
-			transport http {
-                tls
-            }
+    handle /investments* {
+        reverse_proxy {$BACKEND_DOMAIN}:{$BACKEND_PORT} {
+		 transport http {
+            tls
+         }
             # Add Bearer token header
+            header_up Authorization "Bearer {$API_TOKEN}"
+            header_up Host {$BACKEND_DOMAIN}
+
+            import lb_settings
+            import passive_health_checks
+        }
+    }
+
+    handle /campaigns* {
+        reverse_proxy https://{$BACKEND_DOMAIN} {
             header_up Authorization "Bearer {$API_TOKEN}"
             header_up Host {$BACKEND_DOMAIN}
 
